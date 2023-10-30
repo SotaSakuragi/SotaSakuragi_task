@@ -10,12 +10,15 @@
 </head>
 
 <body>
-    <a href="{{ route('tasks.show', $task) }}">戻る</a>
-    <h1>{{ $task->title }}</h1>
+    <h1>タスク詳細</h1>
+    <p>【タイトル】</p>
+    <p>{{ $task->title }}</p>
+    <p>【内容】</p>
     <p>{!! nl2br(e($task->body)) !!}</p>
 
     <div class="button-group">
         <!-- $taskのidを元に編集ページへ遷移する -->
+        <button onclick='location.href="{{ route('tasks.index') }}"'>一覧へ戻る</button>
         <button onclick='location.href="{{ route('tasks.edit', $task) }}"'>編集する</button>
         <form action="{{ route('tasks.destroy', $task) }}" method="post">
             @csrf

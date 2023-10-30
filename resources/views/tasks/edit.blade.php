@@ -10,13 +10,12 @@
 </head>
 
 <body>
-    <a href="{{ route('tasks.index') }}">戻る</a>
-    <h1>更新</h1>
+    <h1>投稿論文編集</h1>
 
     @if ($errors->any())
         <div class="error">
             <p>
-                <b>{{ count($errors) }}件のエラーがあります。</b>
+                <b>【エラー内容】</b>
             </p>
             <ul>
                 @foreach ($errors->all() as $error)
@@ -30,15 +29,18 @@
         @csrf
         @method('PATCH')
         <p>
-            <label for="title">タイトル</label><br>
+            <label for="title">論文タイトル</label><br>
             <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
         </p>
         <p>
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
         </p>
-
-        <input type="submit" value="更新">
+        <div class="button-group">
+            <button type="button" onclick='location.href="{{ route('tasks.show', $task->id) }}"'>詳細に戻る</button>
+            <!-- $taskのidを元に編集ページへ遷移する -->
+            <input type="submit" value="更新">
+        </div>
     </form>
 </body>
 

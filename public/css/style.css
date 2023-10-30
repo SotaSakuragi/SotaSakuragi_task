@@ -1,17 +1,23 @@
 @charset "utf-8";
 
-.body {
-    width: 300px;
-    height: 100px;
+.ul-group ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 .button-group {
     display: flex;
 }
-.button-group > *:not(:last-child) {
-    margin-right: 10px;
+
+.task-item {
+    display: flex;
+    align-items: center;
 }
 
-.error {
-    color: red;
+.task-item a {
+    margin-right: 5px;
+}
+
+.task-item form {
+    display: inline;
 }

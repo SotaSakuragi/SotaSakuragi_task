@@ -10,8 +10,7 @@
 </head>
 
 <body>
-    <a href="{{ route('tasks.index') }}">戻る</a>
-    <h1>新規登録</h1>
+    <h1>新規論文投稿</h1>
 
     @if ($errors->any())
         <div class="error">
@@ -32,11 +31,11 @@
             <input type="text" name="title" id="title" value="{{ old('title') }}">
         </p>
         <p>
-            <label for="body">本文</label><br>
+            <label for="body">内容</label><br>
             <textarea name="body" class="body" id="body">{{ old('body') }}</textarea>
         </p>
 
-        <input type="submit" value="登録">
+        <input type="submit" value="Create Task">
     </form>
 </body>
 
