@@ -13,9 +13,12 @@
     <ul>
         @foreach ($tasks as $task)
             <!-- // リンク先をidで取得し名前で出力 -->
-            <li><a href="{{ route('taska.show', $task) }}">{{ $task->title }}</a></li>
+            <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a></li>
         @endforeach
     </ul>
+
+    <!-- 新規登録画面へジャンプする -->
+    <button onclick='location.href="{{ route('tasks.create') }}"'>登録する</button>
 </body>
 
 </html>
