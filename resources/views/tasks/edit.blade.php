@@ -37,9 +37,8 @@
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea>
         </p>
         <div class="button-group">
-            <button type="button" onclick='location.href="{{ route('tasks.show', $task->id) }}"'>詳細に戻る</button>
-            <!-- $taskのidを元に編集ページへ遷移する -->
             <input type="submit" value="更新">
+            <button type="button" onclick='location.href="{{ route('tasks.show', $task->id) }}"'>詳細に戻る</button>
         </div>
     </form>
 </body>
